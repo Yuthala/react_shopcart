@@ -15,7 +15,7 @@ const Product = ({product, deleteProduct}) => {
 			</div>
 			<div class="product__price">{price} руб.</div>
 			<div class="product__controls">
-				<ButtonDelete deleteProduct={deleteProduct}/>
+				<ButtonDelete deleteProduct={deleteProduct} id={id}/>
 			</div>
 		</section>
 	 );

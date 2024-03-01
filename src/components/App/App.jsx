@@ -9,7 +9,6 @@ import Cart from './../Cart/Cart';
 function App() {
   return (
     <section class="section-cart">
-
         <header class="section-cart__header">
             <div class="container">
                <Title />
@@ -18,9 +17,7 @@ function App() {
 
       <div class="section-cart__body">
           <div class="container">
-
               <Cart />
-
           </div>
       </div>
     </section>

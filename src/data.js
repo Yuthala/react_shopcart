@@ -24,7 +24,7 @@ const cart = [
 		priceTotal: 80,
 	},
 	{
-		id: 1,
+		id: 4,
 		img: 'cucumber.jpg',
 		title: 'Огурцы свежие, 600 г',
 		count: 1,

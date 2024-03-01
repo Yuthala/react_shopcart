@@ -8,8 +8,8 @@ const Cart = () => {
 
 	const [cart, setCart] = useState(data);
 
-	const deleteProduct = () => {
-		console.log('Delete!');
+	const deleteProduct = (id) => {
+		setCart((cart) => cart.filter((product) => id!== product.id));
 	}
 
 	const products = cart.map((product) => {
