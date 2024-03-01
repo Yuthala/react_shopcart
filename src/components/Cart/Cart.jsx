@@ -20,7 +20,8 @@ const Cart = () => {
 				if (product.id === id) {
 					return {
 						...product,
-							count: ++product.count
+							count: ++product.count,
+							priceTotal: product.count*product.price
 					};
 				}
 				return product;

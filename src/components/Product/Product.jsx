@@ -1,10 +1,13 @@
+//TO DO
+//добавить поле цена - выводить туда price из БД
+
 import './style.scss';
 import Count from './../Count/Count';
 import ButtonDelete from './../ButtonDelete/ButtonDelete';
 
 const Product = ({product, deleteProduct, increase}) => {
 	
-	const {img, title, price, count, id} = product;
+	const {img, title, priceTotal, count, id} = product;
 
 	return ( 
 		<section class="product">
@@ -13,7 +16,7 @@ const Product = ({product, deleteProduct, increase}) => {
 			<div class="product__count">
 				<Count count={count} increase={increase} id={id}/>
 			</div>
-			<div class="product__price">{price} руб.</div>
+			<div class="product__price">{priceTotal} руб.</div>
 			<div class="product__controls">
 				<ButtonDelete deleteProduct={deleteProduct} id={id}/>
 			</div>
