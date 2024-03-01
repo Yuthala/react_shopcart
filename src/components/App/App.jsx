@@ -8,15 +8,15 @@ import Cart from './../Cart/Cart';
 
 function App() {
   return (
-    <section class="section-cart">
-        <header class="section-cart__header">
-            <div class="container">
+    <section className="section-cart">
+        <header className="section-cart__header">
+            <div className="container">
                <Title />
             </div>
         </header>
 
-      <div class="section-cart__body">
-          <div class="container">
+      <div className="section-cart__body">
+          <div className="container">
               <Cart />
           </div>
       </div>

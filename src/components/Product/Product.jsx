@@ -10,10 +10,10 @@ const Product = ({product, deleteProduct, increase, decrease}) => {
 	const {img, title, priceTotal, count, id} = product;
 
 	return ( 
-		<section class="product">
-			<div class="product__img"><img src={`./img/products/${img}`} alt={title}/></div>
-			<div class="product__title">{title}</div>
-			<div class="product__count">
+		<section className="product">
+			<div className="product__img"><img src={`./img/products/${img}`} alt={title}/></div>
+			<div className="product__title">{title}</div>
+			<div className="product__count">
 				<Count 
 					count={count} 
 					increase={increase} 
@@ -21,8 +21,8 @@ const Product = ({product, deleteProduct, increase, decrease}) => {
 					id={id}
 				/>
 			</div>
-			<div class="product__price">{priceTotal} руб.</div>
-			<div class="product__controls">
+			<div className="product__price">{priceTotal} руб.</div>
+			<div className="product__controls">
 				<ButtonDelete deleteProduct={deleteProduct} id={id}/>
 			</div>
 		</section>
