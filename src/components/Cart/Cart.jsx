@@ -8,10 +8,12 @@ const Cart = () => {
 
 	const [cart, setCart] = useState(data);
 
+	//функция удаления продукта из корзины
 	const deleteProduct = (id) => {
 		setCart((cart) => cart.filter((product) => id!== product.id));
 	}
 
+	//функция увеличения количества товара в корзине
 	const increase = (id) => {
 
 		setCart((cart) => {
@@ -28,6 +30,7 @@ const Cart = () => {
 		})
 	}
 
+	//функция уменьшения количества товара в корзине
 	const decrease = (id) => {
 
 		setCart((cart) => {
@@ -47,6 +50,21 @@ const Cart = () => {
 		})
 	}
 
+	//функция-обработчик события в инпуте "количество товара" 
+	const changeValue = (id, value) => {
+		setCart((cart) => {
+			return cart.map((product) => {
+				if(product.id === id) {
+					return {
+						...product,
+						count: value,
+						priceTotal: value * product.price
+					}
+				}
+				return product
+			})
+		})
+	}
 
 	const products = cart.map((product) => {
 		return <Product 
@@ -55,6 +73,7 @@ const Cart = () => {
 					deleteProduct={deleteProduct} 
 					increase={increase}
 					decrease={decrease}
+					changeValue={changeValue}
 				/>;
 	});
 
