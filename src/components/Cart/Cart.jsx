@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CartHeader from './../CartHeader/CartHeader';
 import Product from './../Product/Product';
 import CartFooter from '../CartFooter/CartFooter';
 import data from './../../data';
 
 const Cart = () => {
-
+	//состояние корзины
 	const [cart, setCart] = useState(data);
+
+	//отдельное состояние для общего количества товаров в корзине и общую стоимость - total
+	const [total, setTotal] = useState({
+		price: cart.reduce((prev, curr) => prev + curr.priceTotal, 0),
+		count: cart.reduce((prev, curr) => prev + curr.count, 0)
+	})
+
+	//при изменении состояния корзины меняется состояние total
+	//UseEffect срабатывает при изменении состояния объекта
+	useEffect(() => {
+		setTotal({
+			price: cart.reduce((prev, curr) => prev + curr.priceTotal, 0),
+			count: cart.reduce((prev, curr) => prev + curr.count, 0)
+		})
+	}, [cart])
 
 	//функция удаления продукта из корзины
 	const deleteProduct = (id) => {
@@ -81,7 +96,7 @@ const Cart = () => {
 		<section className="cart">
 			    <CartHeader />
                 {products}
-				<CartFooter />
+				<CartFooter total={total}/>
 		</section>
 	 );
 }
