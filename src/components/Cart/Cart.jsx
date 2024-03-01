@@ -33,10 +33,13 @@ const Cart = () => {
 		setCart((cart) => {
 			return cart.map((product) => {
 				if (product.id === id) {
+
+					const newCount = product.count - 1 > 1 ? product.count - 1 : 1;
+
 					return {
 						...product,
-							count: product.count - 1 > 1 ? product.count - 1 : 1,
-							priceTotal: (product.count - 1 > 1 ? --product.count : 1) * product.price
+							count: newCount,
+							priceTotal: newCount * product.price
 					};
 				}
 				return product;
