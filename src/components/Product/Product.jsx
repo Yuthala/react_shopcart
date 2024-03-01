@@ -7,12 +7,12 @@ import ButtonDelete from './../ButtonDelete/ButtonDelete';
 
 const Product = ({ product, deleteProduct, increase, decrease, changeValue }) => {
 	
-	const {img, title, priceTotal, count, id} = product;
+	const {img, title, price, priceTotal, count, id} = product;
 
 	return ( 
 		<section className="product">
 			<div className="product__img"><img src={`./img/products/${img}`} alt={title}/></div>
-			<div className="product__title">{title}</div>
+			<div className="product__title">{title}<br/>Цена: {price} руб. </div>
 			<div className="product__count">
 				<Count 
 					count={count} 

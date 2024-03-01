@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import CartHeader from './../CartHeader/CartHeader';
 import Product from './../Product/Product';
@@ -36,8 +37,8 @@ const Cart = () => {
 				if (product.id === id) {
 					return {
 						...product,
-							count: ++product.count,
-							priceTotal: product.count * product.price
+							count: product.count + 1,
+							priceTotal: (product.count + 1) * product.price
 					};
 				}
 				return product;
